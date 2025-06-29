@@ -1,4 +1,15 @@
-import mongoose from "mongoose";
+const mongoose = require('mongoose')
+
+const todoSchema  = new mongoose.Schema({
+    text:{
+        type:String,
+        required:true
+    },
+    completed:{
+        type:Boolean,
+        default:false
+    }
+});
 
 const taskSchema = new mongoose.Schema({
 
@@ -16,28 +27,38 @@ const taskSchema = new mongoose.Schema({
     priority:{
          type:String,
          enum:['Low','Medium','High'], 
-         default:'Low',
+         default:'Medium',
+    },
+
+    status:{
+        type:String,
+        enum:["Pending","In Progress","Completed"],
+        default:"Pending",
     },
 
     dueDate:{
-        type: Date
+        type: Date,
+        required:true
+
     },
+
+    assignedTo:[{type:mongoose.Schema.Types.ObjectId, ref:"User"}],
+
+
 
     owner:{
-        type: mongoose.Schema.Types.ObjectId, ref:'User', required: true
+        type: mongoose.Schema.Types.ObjectId, ref:"User", required: true
     },
 
-    completed:{
-        type:Boolean,
-        default:false
-    },
+    createdBy: {type: mongoose.Schema.Types.ObjectId, ref:"User"},
+    attachments:[{type: String}],
 
-    createdAt:{
-        type:Date,
-        default: Date.now
-    }
-});
+    todoChecklist:[todoSchema],
+    progress:{type:Number,default:0}
+
+    
+},{timestamps: true});
 
 const Task = mongoose.models.Task || mongoose.model('Task',taskSchema);
 
-export default Task;
+module.exports = Task;
