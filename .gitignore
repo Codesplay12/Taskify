@@ -1,0 +1,34 @@
+# Node modules
+node_modules/
+
+# Build output
+build/
+dist/
+
+# Logs
+*.log
+
+# Env files
+.env
+.env.local
+.env.development
+.env.production
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# React/Vite - Frontend
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+
+# Backend
+Backend/node_modules/
+
+# OS
+*.swp
