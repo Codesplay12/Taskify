@@ -1,8 +1,13 @@
 
 
 export const BASE_URL = import.meta.env.VITE_API_URL;
+<<<<<<< HEAD
+=======
+
+>>>>>>> de15907 (use env in react)
 
 //utils/apiPaths.js
+
 
 export const API_PATHS = {
 AUTH: {
