@@ -87,3 +87,4 @@ const Root = () =>
   return user.role === "admin" ? <Navigate to="/admin/dashboard"/> : <Navigate to="/user/dashboard"/>;
 }
 
+console.log(import.meta.env.VITE_API_URL)
