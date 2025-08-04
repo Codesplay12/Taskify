@@ -16,13 +16,11 @@ const app = express();
 
 
 //MIDDLEWARE TO HANDLE CORS
-app.use(
-    cors({
-        origin: process.env.CLIENT_URL || "*",
-       methods:["GET","POST","PUT","DELETE"],
-       allowedHeaders:["Content-Type","Authorization"],
-    })
-)
+app.use(cors({
+  origin: process.env.CLIENT_URL,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true, // if using cookies or auth headers
+}));
 
 connectDB();
 
