@@ -2,21 +2,12 @@ import axios from "axios";
 import { BASE_URL } from "./apiPath";
 
 const axiosInstance = axios.create({
-<<<<<<< HEAD
-    baseURL: BASE_URL,
-    timeout: 30000,
-    headers :{
-        "Content-Type": "application/json",
-        Accept:"application/json",
-    },
-=======
   baseURL: BASE_URL,
-  timeout: 10000,
+  timeout: 30000,
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",
   },
->>>>>>> de15907 (use env in react)
 });
 
 // 🔐 Request Interceptor
