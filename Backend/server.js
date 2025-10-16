@@ -20,6 +20,10 @@ connectDB();
 //MIDDLEWARE
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("api is running");
+});
+
 // frontend deplyed link
 
 app.use(cors());
